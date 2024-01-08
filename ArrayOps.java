@@ -29,9 +29,13 @@ public class ArrayOps {
             if (array[i] > max)
                 max = array[i];
         }
+        int maxCounter = 0;
         for(int i = 0; i < array.length; i++) {
-            if (array[i] > second_max && array[i] != max)
+            if (array[i] == max)
+                maxCounter++;
+            if (array[i] > second_max && (array[i] != max || maxCounter > 1))
                 second_max = array[i];
+            
         }
         return second_max;
     }
